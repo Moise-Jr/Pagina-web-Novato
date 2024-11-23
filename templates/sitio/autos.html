@@ -1,0 +1,20 @@
+{% include 'sitio/cabecera.html' %}
+
+<div class="container">
+    <div class="row">
+        {% for auto in autos %}
+        <div class="col-md-3 mb-4">
+            <br>
+            <div class="card">
+                <img class="card-img-top" src="{{ url_for('imagenes', imagen=auto[2]) }}" alt="{{ auto[1] }}"/>
+                <div class="card-body">
+                    <h4 class="card-title">{{ auto[1] }}</h4>
+                    <p class="card-text"><a class="btn btn-success" href="{{ auto[3] }}" role="button">Ver</a></p>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+ {% endfor %}
+{% include 'sitio/pie.html' %}
